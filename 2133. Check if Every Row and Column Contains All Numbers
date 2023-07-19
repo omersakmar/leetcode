@@ -1,0 +1,25 @@
+# An n x n matrix is valid if every row and every column contains all the integers from 1 to n (inclusive).
+
+# Given an n x n integer matrix matrix, return true if the matrix is valid. Otherwise, return false.
+
+function checkValid(arr)
+     {
+         for (let i = 0; i < arr.length; i++) {
+             const rowSet = new Set()
+             const colSet = new Set();
+             
+             for (let j = 0; j < arr.length; j++) {
+                 const elementInRow = arr[i][j]
+                 const elementInCol = arr[j][i]
+                 
+                 rowSet.add(elementInRow)
+                 colSet.add(elementInCol)
+
+             }
+          if (rowSet.size !== arr.length || colSet.size !== arr.length) {
+              return false;
+          }
+         }
+         return true;
+
+     }
